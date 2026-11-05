@@ -151,7 +151,7 @@ Something about these records doesn't add up.`,
             "NETWORK TERMINAL 01: SESSION FILTER Recovered network sessions: Session | Process ID | Port | Data A | 314 | 443 | 1010 B | 721 | 22 | 0111 C | 314 | 443 | 1100 D | 830 | 443 | 0011 E | 428 | 22 | 1110 F | 314 | 443 | 0011 Find all sessions meeting BOTH conditions: - Process ID: 314 - Port: 443 Identify all matching session letters in alphabetical order.",
           wrongFeedback:
             "SESSION FILTER INCOMPLETE. BOTH CONDITIONS MUST MATCH.",
-          answerFormatHint: "Alphabetical order of session letters, e.g. ACF",
+          answerFormatHint: "Alphabetical order of session letters, e.g. ABC",
         },
         {
           id: "2.2",
@@ -222,7 +222,7 @@ The backup from the network room should help us recover what happened.`,
           wrongFeedback: "OUTPUT DOES NOT MATCH. CHECK THE INDEX POSITIONS.",
           revealAfterCorrect:
             "SCRIPT OUTPUT RECOVERED: -10. The terminal identifies this value as part of the missing memory restoration command.",
-          answerFormatHint: "Number with sign, e.g. -10",
+          answerFormatHint: "Number with sign, e.g. -5",
         },
         {
           id: "3.3",
@@ -370,7 +370,7 @@ Whatever Subject Zero is... whatever happened here... the final session will tel
             "CONTAINMENT TERMINAL 04: FINAL INVESTIGATION REPORT You have recovered the incident records, reconstructed the final timeline and examined both memory states. Submit the final keyword recovered from Memory B. Then select the conclusion that best represents your investigation: A. Subject Zero was responsible for everything. The official report was correct. B. The scientists definitely fabricated the entire incident. C. The official account is incomplete or misleading. Evidence indicates post-shutdown activity and altered records, but the identity of the responsible entity remains unknown. D. Subject Zero was definitely innocent and was deliberately framed. Enter the keyword and select your conclusion.",
           wrongFeedback:
             "FINAL REPORT REJECTED. YOUR CONCLUSION MUST MATCH THE RECOVERED EVIDENCE.",
-          answerFormatHint: "KEYWORD; CONCLUSION (e.g. THEY LIED; C)",
+          answerFormatHint: "KEYWORD; CONCLUSION (e.g. STATUS; A)",
         },
       ],
       discoveryFile:

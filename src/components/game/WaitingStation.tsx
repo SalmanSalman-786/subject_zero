@@ -2,6 +2,7 @@
 
 import React from "react";
 import { formatDurationMmSs } from "@/lib/game/admin-utils";
+import { InvestigationBriefing } from "./InvestigationBriefing";
 
 export interface RecoveredAnswerItem {
   questionId: string;
@@ -295,6 +296,9 @@ export function WaitingStation({
             })}
           </div>
         )}
+
+        {/* Collapsible Mission Briefing */}
+        <InvestigationBriefing defaultExpanded={false} />
 
         {/* Tactical Advice Reminder */}
         <div className="p-3 bg-[var(--bg)]/60 border border-[var(--panel-border)]/70 rounded-xs text-[11px] text-[var(--text-muted)] leading-relaxed">

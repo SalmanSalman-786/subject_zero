@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { TerminalPanel } from "@/components/TerminalPanel";
+import { InvestigationBriefing } from "./InvestigationBriefing";
 
 interface SquadMember {
   id: string;
@@ -176,16 +177,8 @@ export function SquadLobby({
         </span>
       </div>
 
-      {/* Instructions */}
-      <div className="text-xs text-text/60 font-mono leading-relaxed bg-background/50 p-3 border border-panel/50 space-y-1">
-        <p className="text-cold-blue font-bold uppercase tracking-wider">
-          CO-OP DEPLOYMENT PROTOCOL:
-        </p>
-        <p>• 4 agents must connect using the 6-character access code.</p>
-        <p>• Assign each agent to lead one investigative round (10-min timer per round).</p>
-        <p>• In Rounds 1–4, only the designated agent interacts while teammates observe telemetry.</p>
-        <p>• In Round 5, all 4 agents work simultaneously on distributed reboot directives.</p>
-      </div>
+      {/* Instructions / Operative Briefing */}
+      <InvestigationBriefing />
 
       {/* 4 Agent Cards */}
       <div className="space-y-3">

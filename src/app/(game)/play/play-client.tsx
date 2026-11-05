@@ -30,6 +30,7 @@ import { getThemeForRound, ThemeId } from "@/theme/rounds";
 import { getRoundDefinition } from "@/rounds/registry";
 import { getSceneConfig } from "@/lib/scenes";
 import { SquadLobby } from "@/components/game/SquadLobby";
+import { ThemeSkin } from "@/components/skin/ThemeSkin";
 
 // Lazy-load the heavy story overlay component
 const StoryOverlay = dynamic(
@@ -900,6 +901,7 @@ export function PlayClient() {
       data-round={currentTheme.id}
       className="min-h-[100dvh] flex flex-col bg-background text-text font-mono relative overflow-hidden"
     >
+      <ThemeSkin round={roomNumber} />
       <ThemeBackground currentThemeId={currentTheme.id} />
       <RoomBackdrop backdrop={currentTheme.backdrop} />
       <ThemeEffects effects={currentTheme.effects} />

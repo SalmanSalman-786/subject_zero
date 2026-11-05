@@ -287,24 +287,26 @@ export function CaesarWheel({
         </div>
 
         {/* Back and Forward Controls */}
-        <div className="flex items-center gap-4 mt-4">
+        <div className="flex items-center justify-center gap-4 mt-4">
           <button
             type="button"
             onClick={handleBack}
-            className="w-14 h-11 flex items-center justify-center border border-[var(--panel-border)] bg-[var(--bg)] hover:bg-[var(--panel)] text-[var(--accent)] hover:text-[var(--accent2)] text-base font-bold transition-all focus-visible:outline-2 focus-visible:outline-[var(--accent)] cursor-pointer shadow-xs active:scale-95 rounded-xs"
+            className="min-w-[120px] min-h-[44px] px-4 py-2.5 flex items-center justify-center gap-2 border border-[var(--panel-border)] bg-[var(--bg)] hover:bg-[var(--panel)] text-[var(--accent)] hover:text-[var(--accent2)] text-xs font-mono font-bold tracking-wider uppercase transition-all focus-visible:outline-2 focus-visible:outline-[var(--accent)] cursor-pointer shadow-xs active:scale-95 rounded-xs"
             title="Rotate Back (-1 Shift)"
             aria-label="Rotate Back"
           >
-            ◀ BACK
+            <span>◀</span>
+            <span>BACK</span>
           </button>
           <button
             type="button"
             onClick={handleForward}
-            className="w-14 h-11 flex items-center justify-center border border-[var(--panel-border)] bg-[var(--bg)] hover:bg-[var(--panel)] text-[var(--accent)] hover:text-[var(--accent2)] text-base font-bold transition-all focus-visible:outline-2 focus-visible:outline-[var(--accent)] cursor-pointer shadow-xs active:scale-95 rounded-xs"
+            className="min-w-[120px] min-h-[44px] px-4 py-2.5 flex items-center justify-center gap-2 border border-[var(--panel-border)] bg-[var(--bg)] hover:bg-[var(--panel)] text-[var(--accent)] hover:text-[var(--accent2)] text-xs font-mono font-bold tracking-wider uppercase transition-all focus-visible:outline-2 focus-visible:outline-[var(--accent)] cursor-pointer shadow-xs active:scale-95 rounded-xs"
             title="Rotate Forward (+1 Shift)"
             aria-label="Rotate Forward"
           >
-            FORWARD ▶
+            <span>FORWARD</span>
+            <span>▶</span>
           </button>
         </div>
       </div>

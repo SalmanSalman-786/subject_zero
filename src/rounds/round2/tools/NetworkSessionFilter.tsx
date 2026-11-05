@@ -167,16 +167,16 @@ export function NetworkSessionFilter({
             className="relative"
             style={{
               clipPath: cursorPos
-                ? `circle(85px at ${cursorPos.x}px ${cursorPos.y}px)`
+                ? `circle(55px at ${cursorPos.x}px ${cursorPos.y}px)`
                 : "circle(0px at 0px 0px)",
               WebkitClipPath: cursorPos
-                ? `circle(85px at ${cursorPos.x}px ${cursorPos.y}px)`
+                ? `circle(55px at ${cursorPos.x}px ${cursorPos.y}px)`
                 : "circle(0px at 0px 0px)",
               maskImage: cursorPos
-                ? `radial-gradient(circle 85px at ${cursorPos.x}px ${cursorPos.y}px, black 0%, black 50px, transparent 85px)`
+                ? `radial-gradient(circle 55px at ${cursorPos.x}px ${cursorPos.y}px, black 0%, rgba(0,0,0,0.92) 36px, rgba(0,0,0,0.3) 48px, transparent 55px)`
                 : "none",
               WebkitMaskImage: cursorPos
-                ? `radial-gradient(circle 85px at ${cursorPos.x}px ${cursorPos.y}px, black 0%, black 50px, transparent 85px)`
+                ? `radial-gradient(circle 55px at ${cursorPos.x}px ${cursorPos.y}px, black 0%, rgba(0,0,0,0.92) 36px, rgba(0,0,0,0.3) 48px, transparent 55px)`
                 : "none",
               opacity: cursorPos ? 1 : 0,
               pointerEvents: cursorPos ? "auto" : "none",
@@ -245,21 +245,35 @@ export function NetworkSessionFilter({
             </div>
           </div>
 
-          {/* Spotlight Glow Circle at Cursor Position */}
+          {/* Flashlight Beam at Cursor Position - Realistic dark room searchlight */}
           {cursorPos && (
-            <div
-              className="absolute pointer-events-none z-30 rounded-full"
-              style={{
-                width: "170px",
-                height: "170px",
-                left: `${cursorPos.x - 85}px`,
-                top: `${cursorPos.y - 85}px`,
-                background:
-                  "radial-gradient(circle, rgba(74, 222, 128, 0.22) 0%, rgba(56, 189, 248, 0.1) 50%, transparent 75%)",
-                boxShadow: "0 0 25px 6px rgba(74, 222, 128, 0.18)",
-                border: "1px solid rgba(74, 222, 128, 0.28)",
-              }}
-            />
+            <>
+              {/* Soft ambient light spill (faint penumbra) */}
+              <div
+                className="absolute pointer-events-none z-20 rounded-full"
+                style={{
+                  width: "150px",
+                  height: "150px",
+                  left: `${cursorPos.x - 75}px`,
+                  top: `${cursorPos.y - 75}px`,
+                  background:
+                    "radial-gradient(circle, rgba(169, 139, 209, 0.08) 0%, rgba(169, 139, 209, 0.03) 50%, transparent 75%)",
+                }}
+              />
+              {/* Focused torch beam (smaller radius, natural falloff, bright central hotspot, no geometric wireframe outline) */}
+              <div
+                className="absolute pointer-events-none z-30 rounded-full"
+                style={{
+                  width: "110px",
+                  height: "110px",
+                  left: `${cursorPos.x - 55}px`,
+                  top: `${cursorPos.y - 55}px`,
+                  background:
+                    "radial-gradient(circle at center, rgba(255, 250, 235, 0.35) 0%, rgba(215, 195, 250, 0.22) 25%, rgba(169, 139, 209, 0.08) 60%, transparent 85%)",
+                  boxShadow: "0 0 24px 6px rgba(190, 160, 240, 0.16)",
+                }}
+              />
+            </>
           )}
         </div>
 
@@ -293,7 +307,7 @@ export function NetworkSessionFilter({
           </div>
 
           {/* Selected Slots and SUBMIT Bar matching Screenshot */}
-          <div className="border border-[var(--panel-border)] bg-[var(--panel)]/60 p-4 rounded-sm shadow-md flex items-center justify-between gap-4">
+          <div className="border border-[var(--panel-border)] bg-[var(--panel)]/60 p-3 sm:p-4 rounded-sm shadow-md flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-2 text-xs font-mono">
               <span className="text-[var(--text)] font-semibold">Selected:</span>
               <div className="flex items-center gap-1.5">
@@ -317,7 +331,7 @@ export function NetworkSessionFilter({
               type="button"
               onClick={handleSubmit}
               disabled={disabled || isSubmitting}
-              className="px-6 py-2 border border-[var(--accent)] bg-transparent hover:bg-[var(--accent)] text-[var(--accent)] hover:text-[var(--bg)] disabled:opacity-40 font-bold text-xs uppercase tracking-widest transition-all cursor-pointer shadow-xs focus-visible:outline-2 focus-visible:outline-[var(--accent)] active:scale-95"
+              className="px-3.5 sm:px-4 py-2 border border-[var(--accent)] bg-transparent hover:bg-[var(--accent)] text-[var(--accent)] hover:text-[var(--bg)] disabled:opacity-40 font-bold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-xs focus-visible:outline-2 focus-visible:outline-[var(--accent)] active:scale-95 whitespace-nowrap shrink-0"
             >
               {isSubmitting ? "CHECKING..." : "SUBMIT"}
             </button>

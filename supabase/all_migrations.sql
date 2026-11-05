@@ -1,5 +1,5 @@
 -- ============================================================================
--- SUBJECT ZERO — CONCATENATED MIGRATIONS (0001 to 0006)
+-- SUBJECT ZERO — CONCATENATED MIGRATIONS (0001 to 0008)
 -- Run this in the Supabase SQL Editor for complete one-click database setup.
 -- ============================================================================
 
@@ -436,4 +436,11 @@ create index if not exists idx_team_members_team_id on team_members(team_id);
 create index if not exists idx_team_members_email on team_members(email);
 
 alter table team_members enable row level security;
+
+-- ----------------------------------------------------------------------------
+-- Migration 0008: Kill switch for interactive puzzle tools
+-- ----------------------------------------------------------------------------
+
+alter table game_state
+  add column if not exists tools_enabled boolean not null default true;
 

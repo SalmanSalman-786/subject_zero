@@ -46,7 +46,7 @@ EVENT_MODE=remote
 
 ### 2. Apply Database Migrations
 In the Supabase SQL Editor:
-- Execute `supabase/all_migrations.sql` to apply all migrations (0001 through 0006).
+- Execute `supabase/all_migrations.sql` to apply all migrations (0001 through 0008).
 - *(Optional - Test Environments Only)*: Execute `supabase/seed.sql` to seed test teams.
 
 ### 3. Install Dependencies & Run Dev Server
@@ -64,7 +64,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 Run the full testing and security audit suite:
 
 ```bash
-# 1. Run Unit Tests (111 tests covering answers, rate limits, sessions, content)
+# 1. Run Unit Tests (247 tests covering answers, rate limits, sessions, content, themes, briefings)
 npm test
 
 # 2. Check Scene Images Integrity
@@ -146,3 +146,15 @@ For complete event-day operational timelines, non-developer organizer checklists
 - 📋 [docs/AUDIT.md](file:///c:/Users/salma/Desktop/CSI/project/docs/AUDIT.md) (Section 11 Technical Implementation Audit)
 - 📊 [docs/LOADTEST.md](file:///c:/Users/salma/Desktop/CSI/project/docs/LOADTEST.md) (Load Testing Documentation)
 - 🖼️ [docs/IMAGES.md](file:///c:/Users/salma/Desktop/CSI/project/docs/IMAGES.md) (Scene Artwork Specifications)
+
+---
+
+## Visual Skin Configuration & Revert
+
+The player-facing interface features a classic gothic-noir visual skin (`skin-classic.css`). To disable the skin and instantly revert to the default terminal aesthetic, set the environment variable:
+
+```env
+NEXT_PUBLIC_SKIN=off
+```
+
+When set to `off`, the classic skin is completely bypassed without any behavioral or functional change.

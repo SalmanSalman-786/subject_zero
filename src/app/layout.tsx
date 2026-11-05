@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import "@/styles/skin-classic.css";
 
 export const metadata: Metadata = {
   title: "SUBJECT ZERO",

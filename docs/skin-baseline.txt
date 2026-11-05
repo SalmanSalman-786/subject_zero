@@ -1,0 +1,68 @@
+BASELINE VERIFICATION REPORT
+Generated: 2026-11-05
+Project: SUBJECT ZERO
+
+1. ESLINT
+Command: npm run lint
+Result: Passed (0 errors, 0 warnings)
+Output:
+> subject-zero@0.1.0 lint
+> eslint
+
+2. VITEST (UNIT & THEME TESTS)
+Command: npm test
+Result: 13 passed (13 files), 240 passed (240 tests)
+Output:
+ ✓ src/lib/game/__tests__/squad-coop.test.ts (8 tests)
+ ✓ src/lib/sound/__tests__/sound-engine.test.ts (16 tests)
+ ✓ src/lib/game/__tests__/admin-utils.test.ts (31 tests)
+ ✓ src/theme/__tests__/contrast.test.ts (32 tests)
+ ✓ src/theme/__tests__/theme-shell.test.ts (30 tests)
+ ✓ src/lib/game/__tests__/client-utils.test.ts (10 tests)
+ ✓ src/rounds/round1/__tests__/round1.test.ts (15 tests)
+ ✓ src/lib/game/__tests__/engine.test.ts (38 tests)
+ ✓ src/lib/game/__tests__/rate-limits.test.ts (3 tests)
+ ✓ src/rounds/round4/__tests__/round4.test.ts (12 tests)
+ ✓ src/rounds/round3/__tests__/round3.test.ts (12 tests)
+ ✓ src/lib/game/__tests__/session-control.test.ts (19 tests)
+ ✓ src/rounds/round2/__tests__/round2.test.ts (14 tests)
+
+ Test Files  13 passed (13)
+      Tests  240 passed (240)
+
+3. NEXT.JS PRODUCTION BUILD
+Command: npm run build
+Result: Succeeded (exit code 0)
+Routes:
+┌ ƒ /
+├ ƒ /_not-found
+├ ƒ /admin
+├ ƒ /admin/login
+├ ƒ /api/admin/attempts
+├ ƒ /api/admin/export
+├ ƒ /api/admin/game
+├ ƒ /api/admin/login
+├ ƒ /api/admin/logout
+├ ƒ /api/admin/logs
+├ ƒ /api/admin/settings
+├ ƒ /api/admin/stats
+├ ƒ /api/admin/team
+├ ƒ /api/admin/teams
+├ ƒ /api/admin/teams/create
+├ ƒ /api/admin/tools
+├ ƒ /api/answer
+├ ƒ /api/health
+├ ƒ /api/join
+├ ƒ /api/leaderboard
+├ ƒ /api/leave
+├ ƒ /api/lobby
+├ ƒ /api/register
+├ ƒ /api/round/start
+├ ƒ /api/round3/validate-iteration
+├ ƒ /api/round5/authorize
+├ ƒ /api/state
+├ ○ /icon.svg
+├ ƒ /leaderboard
+└ ƒ /play
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand

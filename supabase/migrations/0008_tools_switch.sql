@@ -1,4 +1,4 @@
--- Migration: 0007_tools_switch.sql
+-- Migration: 0008_tools_switch.sql
 -- Kill switch for interactive puzzle tools
 -- When false, all rooms fall back to plain-text prompts (e.g. 1.1 displays the binary string directly)
 

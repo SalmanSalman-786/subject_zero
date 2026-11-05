@@ -16,3 +16,5 @@ export * from "./ToolErrorBoundary";
 export * from "./game/Round5WaitingRoom";
 export * from "./game/WaitingStation";
 export * from "./game/FinalBreachGate";
+export * from "./game/SquadLobby";
+export * from "./game/InvestigationBriefing";

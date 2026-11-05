@@ -23,9 +23,6 @@
 # misc
 .DS_Store
 *.pem
-admin_cookie.txt
-pdf_text_dump.txt
-sections_extracted.txt
 
 # debug
 npm-debug.log*
