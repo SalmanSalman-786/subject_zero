@@ -269,7 +269,7 @@ export function LeaderboardClient() {
             </span>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 text-xs">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 text-xs">
             <div>
               <span className="text-text/40 block text-[10px] uppercase">OPERATING UNIT</span>
               <span className="font-bold text-cold-blue text-sm truncate block">
@@ -280,12 +280,6 @@ export function LeaderboardClient() {
               <span className="text-text/40 block text-[10px] uppercase">FINAL COMPLETION TIME</span>
               <span className="font-bold text-primary text-sm block">
                 {data.myTeamResult.formattedTime}
-              </span>
-            </div>
-            <div>
-              <span className="text-text/40 block text-[10px] uppercase">SUBMISSION ATTEMPTS</span>
-              <span className="font-bold text-text text-sm block">
-                {data.myTeamResult.attempts}
               </span>
             </div>
             <div>
@@ -339,10 +333,9 @@ export function LeaderboardClient() {
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="border-b border-border/80 bg-panel/90 text-text/50 text-[11px] sm:text-xs tracking-wider uppercase">
-                  <th className="py-2.5 px-3 sm:px-4 w-16">RANK</th>
+                  <th className="py-2.5 px-3 sm:px-4 w-20">RANK</th>
                   <th className="py-2.5 px-3 sm:px-4">TEAM DESIGNATION</th>
                   <th className="py-2.5 px-3 sm:px-4 text-right">TIME</th>
-                  <th className="py-2.5 px-3 sm:px-4 text-right">WRONG ATTEMPTS</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border/40 text-xs sm:text-sm">
@@ -385,9 +378,6 @@ export function LeaderboardClient() {
                       <td className="py-3 px-3 sm:px-4 text-right font-mono font-bold tracking-widest text-primary">
                         {team.formattedTime}
                       </td>
-                      <td className="py-3 px-3 sm:px-4 text-right font-mono text-text/70">
-                        {team.attempts}
-                      </td>
                     </tr>
                   );
                 })}
@@ -412,8 +402,7 @@ export function LeaderboardClient() {
               <thead>
                 <tr className="border-b border-border/60 bg-panel/70 text-text/40 text-[11px] sm:text-xs tracking-wider uppercase">
                   <th className="py-2 px-3 sm:px-4">TEAM DESIGNATION</th>
-                  <th className="py-2 px-3 sm:px-4 text-center">STATUS</th>
-                  <th className="py-2 px-3 sm:px-4 text-right">WRONG ATTEMPTS</th>
+                  <th className="py-2 px-3 sm:px-4 text-right">STATUS</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border/30 text-xs sm:text-sm">
@@ -427,11 +416,8 @@ export function LeaderboardClient() {
                     <td className="py-2.5 px-3 sm:px-4 font-mono">
                       {team.name}
                     </td>
-                    <td className="py-2.5 px-3 sm:px-4 text-center font-mono text-text/60">
-                      IN PROGRESS {team.progress}/20
-                    </td>
-                    <td className="py-2.5 px-3 sm:px-4 text-right font-mono text-text/50">
-                      {team.attempts}
+                    <td className="py-2.5 px-3 sm:px-4 text-right font-mono text-text/60">
+                      IN PROGRESS ({team.progress}/20)
                     </td>
                   </tr>
                 ))}
